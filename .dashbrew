@@ -1,0 +1,10 @@
+---
+gulp.talk:
+  title: Gulp Talk [Code Demo]
+  php:
+    build: system
+  vhost:
+    servername: gulp.talk
+    docroot: /var/www/gulp-talk/public
+    serveraliases:
+      - www.gulp.talk

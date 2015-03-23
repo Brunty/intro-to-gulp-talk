@@ -1,0 +1,6 @@
+suites:
+  brunty_suite:
+    namespace: Brunty\GulpTalk
+    psr4_prefix: Brunty\GulpTalk
+    src_path: src
+    spec_prefix: spec

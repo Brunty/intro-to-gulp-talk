@@ -1,0 +1,26 @@
+# Auto generated asset files
+/public/css/*
+/public/js/*
+
+# Caches
+.sass-cache
+
+# Node Files
+/node_modules
+
+# npm logs
+npm-debug.log
+
+# Bower Files
+/bower_components
+
+/vendor
+
+# IDE files etc
+/.idea
+/.vagrant
+.project
+.tmp*
+.DS_*
+.DS_Store
+.settings/*
