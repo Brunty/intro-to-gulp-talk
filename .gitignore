@@ -16,6 +16,9 @@ npm-debug.log
 
 /vendor
 
+# VM / Environment files
+.dashbrew
+
 # IDE files etc
 /.idea
 /.vagrant
