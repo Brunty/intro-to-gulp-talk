@@ -10,10 +10,10 @@
 </head>
 <body>
 
-<div class="gulpTalk_imageBox">
-    <h1 class="gulpTalk_imageBox-title">It works!</h1>
-    <div class="gulpTalk_imageBox-subtitle">It's just like...</div>
-    <img class="gulpTalk_imageBox-image" src="http://i.imgur.com/4WhOzBt.jpg">
+<div class="image-box">
+    <h1 class="image-box__title image-box__title--alternate">It works!</h1>
+    <div class="image-box__subtitle">It's just like...</div>
+    <img class="image-box__image" src="http://i.imgur.com/4WhOzBt.jpg">
 </div>
 
 </body>

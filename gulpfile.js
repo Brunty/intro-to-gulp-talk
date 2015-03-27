@@ -46,9 +46,12 @@ gulp.task('default', 'Starts browser sync, runs our styles task, then watches SA
 gulp.task('tests', 'Runs our phpspec task, then watches PHP files for changes.', ['phpspec', 'watch-phpspec']);
 
 gulp.task('browser-sync', 'Starts browser sync as a proxy to http://gulp.talk', function() {
-    browsersync({
-        proxy: 'gulp.talk'
-    });
+    // if we're not in production, start browsersync
+    if( ! isProduction) {
+        browsersync({
+            proxy: 'gulp.talk'
+        });
+    }
 });
 
 gulp.task('hello', 'Hello world!', function() {
@@ -61,15 +64,18 @@ gulp.task('styles', 'Compiles SASS files into a single CSS file.', function () {
             console.error('Error', err.message);
         })
         .pipe(prefix({ browsers: ["last 5 versions", "> 1%", "ie 9", "safari > 6"]})) // prefix for browsers
-        .pipe(sourcemaps.write())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('maps', {
+            includeContent: true,
+            sourceRoot: '../../../' + paths.assets.sass
+        }))
         .pipe(gulp.dest(paths.output.css))
         .pipe(notify({message: 'Styles task complete.'}))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('watch-styles', 'Watches SASS files for changes then runs styles task on them.', function () {
-    gulp.watch([paths.assets.sass + '**/*.scss'], ['styles']).on('error', function() {
+    gulp.watch([paths.assets.sass + '**/*.scss', paths.assets.sass + '**/*.sass'], ['styles']).on('error', function() {
         gutil.log(gutil.colors.red(err));
     });
 });
