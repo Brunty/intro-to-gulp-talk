@@ -1,23 +1,25 @@
 .image-box
-    padding: $default-padding
     +center-both
+    padding: $default-padding
     max-width: 640px
     width: 100%
+    &--red
+        background-color: #ff0000
     &__title
         text-align: center
         color: #fff
         text-transform: uppercase
         letter-spacing: 5px
-        font-weight: 600
+        font-weight: $font-weight-semi-bold
         font-size: 96px
-        margin-top: $default-padding * 4
-        margin-bottom: $default-padding * 2
+        margin-top: 0
+        margin-bottom: 30px
         &--alternate
-            color: #00ff00
+            color: #4cabcc
     &__subtitle
-        font-weight: 300
+        font-weight: $font-weight-light
         color: #fff
-        font-size: 48px
+        font-size: 40px
         text-align: center
         margin-bottom: $default-padding * 4
     &__image
