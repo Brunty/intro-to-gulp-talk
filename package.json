@@ -5,7 +5,7 @@
   "main": "public/index.php",
   "repository": "https://github.com/Brunty/intro-to-gulp-talk",
   "scripts": {
-    "styles": "bundle exec sass --sourcemap=file --load-path=resources/sass/ --style=compact resources/sass/main.sass public/css/main.min.css && autoprefixer -b 'last 2 versions' public/css/main.min.css"
+    "styles": "bundle exec sass --sourcemap=inline --load-path=resources/sass/ --style=compact resources/sass/main.sass public/css/main.min.css && autoprefixer -b 'last 2 versions' public/css/main.min.css"
   },
   "author": "Matt Brunt <matt@mfyu.co.uk>",
   "license": "MIT",
