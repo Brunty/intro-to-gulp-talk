@@ -1,6 +1,7 @@
 # Auto generated asset files
 /public/css/*
 /public/js/*
+/public/fonts/*
 
 # Caches
 .sass-cache
