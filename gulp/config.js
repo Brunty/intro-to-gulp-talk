@@ -14,8 +14,10 @@ if (gutil.env.prod === true) {
     sourceMap = false;
 }
 
-var sassPath = 'resources/sass/';
-var cssPath = 'public/css/';
+var resourcesBasePath = 'resources/';
+var sassPath = resourcesBasePath + 'sass/';
+var publicBasePath = 'public/';
+var cssPath = publicBasePath + 'css/';
 
 module.exports = {
     isDevelopment: isDevelopment,
