@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Package file for a gulp-talk.",
   "main": "public/index.php",
+  "repository": "https://github.com/Brunty/intro-to-gulp-talk",
   "scripts": {
-    "test": "echo \"Error: no test specified\" "
+    "styles": "bundle exec sass --sourcemap=file --load-path=resources/sass/ --style=compact resources/sass/main.sass public/css/main.min.css && autoprefixer -b 'last 2 versions' public/css/main.min.css"
   },
   "author": "Matt Brunt <matt@mfyu.co.uk>",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^5.1.0",
     "browser-sync": "^2.2.3",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",

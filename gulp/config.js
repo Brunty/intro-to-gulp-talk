@@ -14,6 +14,12 @@ if (gutil.env.prod === true) {
     sourceMap = false;
 }
 
+var verboseMode = false;
+
+if(gutil.env.verbose === true) {
+    verboseMode = true;
+}
+
 var resourcesBasePath = 'resources/';
 var sassPath = resourcesBasePath + 'sass/';
 var publicBasePath = 'public/';
@@ -34,6 +40,7 @@ module.exports = {
         sourcemap: sourceMap,
         bundleExec: true,
         loadPath: sassPath,
-        style: sassStyle
+        style: sassStyle,
+        verbose: verboseMode
     }
 };
