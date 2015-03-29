@@ -1,3 +1,4 @@
 var gulp = require('gulp');
 
-gulp.task('tests', ['phpspec', 'watch-phpspec']);
+// Runs our phpspec task then starts the watcher
+gulp.task('tests', ['phpspec', 'watch:phpspec']);

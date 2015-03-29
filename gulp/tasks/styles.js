@@ -8,6 +8,7 @@ var browsersync = require('browser-sync');
 var reload = browsersync.reload;
 var config = require('../config');
 
+// Compiles our SASS into a single, minified file with sourcemaps if in development
 gulp.task('styles', function () {
     var sassConfig = config.sassConfig;
 

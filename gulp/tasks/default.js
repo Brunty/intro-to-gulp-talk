@@ -1,3 +1,4 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['browser-sync', 'styles', 'watch-styles']);
+// Our Default task
+gulp.task('default', ['browser-sync', 'styles', 'watch:styles']);

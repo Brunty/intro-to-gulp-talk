@@ -3,6 +3,7 @@ var notify = require('gulp-notify');
 var phpspec = require('gulp-phpspec');
 var _ = require('lodash');
 
+// Runs phpspec test suite
 gulp.task('phpspec', function () {
     gulp.src('phpspec.yml')
         .pipe(phpspec('./vendor/bin/phpspec run', { notify: true, debug: false }))
