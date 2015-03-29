@@ -5,11 +5,10 @@ var gutil = require('gulp-util');
  Running without the flag will assume development mode and tasks can use the isDevelopment variable to check this
  */
 var isDevelopment = true;
-var sassStyle = 'compact';
+var sassStyle = 'compressed';
 var sourceMap = true;
 
 if (gutil.env.prod === true) {
-    sassStyle = 'compressed';
     isDevelopment = false;
     sourceMap = false;
 }
