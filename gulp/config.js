@@ -14,11 +14,7 @@ if (gutil.env.prod === true) {
     sourceMap = false;
 }
 
-var verboseMode = false;
-
-if(gutil.env.verbose === true) {
-    verboseMode = true;
-}
+var verboseMode = (gutil.env.verbose === true);
 
 var resourcesBasePath = 'resources/';
 var sassPath = resourcesBasePath + 'sass/';
