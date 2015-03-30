@@ -4,11 +4,12 @@ var sourcemaps = require('gulp-sourcemaps');
 var prefix = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 var notify = require('gulp-notify');
+var filter = require('gulp-filter');
 var browsersync = require('browser-sync');
 var reload = browsersync.reload;
 var config = require('../config');
 
-// Compiles our SASS into a single, minified file with sourcemaps if in development
+// Compiles our SASS into a single, minified file (with sourcemaps if in development)
 gulp.task('styles', function () {
     var sassConfig = config.sassConfig;
     sassConfig.onError = browsersync.notify;
@@ -19,11 +20,9 @@ gulp.task('styles', function () {
         })
         .pipe(prefix({ browsers: ["last 5 versions", "> 1%", "ie 9", "safari > 6"] })) // prefix for browsers
         .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('maps', {
-            includeContent: true,
-            sourceRoot: '../../../' + config.paths.assets.sass
-        }))
+        .pipe(sourcemaps.write('maps', { includeContent: true }))
         .pipe(gulp.dest(config.paths.output.css))
         .pipe(notify({ message: 'Styles task complete.' }))
+        .pipe(filter('**/*.css'))
         .pipe(reload({ stream: true }));
 });
