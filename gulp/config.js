@@ -4,14 +4,9 @@ var gutil = require('gulp-util');
  Differentiate dev to production via the --prod flag
  Running without the flag will assume development mode and tasks can use the isDevelopment variable to check this
  */
-var isDevelopment = true;
+var isDevelopment = ! (gutil.env.prod === true);
 var sassStyle = 'compressed';
-var sourceMap = true;
-
-if (gutil.env.prod === true) {
-    isDevelopment = false;
-    sourceMap = false;
-}
+var sourceMap = ! (gutil.env.prod === true);
 
 var verboseMode = (gutil.env.verbose === true);
 
