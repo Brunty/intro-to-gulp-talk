@@ -4,5 +4,5 @@ var config = require('../config');
 
 // Our Default task
 gulp.task('clean', function(cb) {
-    del([config.paths.output.css], cb);
+    del([config.paths.output.css + '*'], cb);
 });
