@@ -14,5 +14,8 @@
     },
     "require-dev": {
         "phpspec/phpspec": "~2.1"
+    },
+    "scripts": {
+        "sass": "bundle exec sass --sourcemap=inline --load-path=resources/sass/ --style=compressed resources/sass/main.sass public/css/main.min.css && autoprefixer -b 'last 2 versions' public/css/main.min.css"
     }
 }

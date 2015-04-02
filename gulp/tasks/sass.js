@@ -12,7 +12,6 @@ var config = require('../config');
 // Compiles our SASS into a single, minified file (with sourcemaps if in development)
 gulp.task('sass', function () {
     var sassConfig = config.sassConfig;
-    sassConfig.onError = browsersync.notify;
 
     return sass(config.paths.assets.sass + 'main.sass', sassConfig)
         .on('error', function (err) {
@@ -22,7 +21,7 @@ gulp.task('sass', function () {
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('./', { includeContent: true }))
         .pipe(gulp.dest(config.paths.output.css))
-        .pipe(notify({ message: 'Styles task complete.' }))
         .pipe(filter('**/*.css'))
+        .pipe(notify({ message: 'Sass task complete.' }))
         .pipe(reload({ stream: true }));
 });

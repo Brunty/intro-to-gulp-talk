@@ -4,33 +4,31 @@ var gutil = require('gulp-util');
  Differentiate dev to production via the --prod flag
  Running without the flag will assume development mode and tasks can use the isDevelopment variable to check this
  */
-var isDevelopment = ! (gutil.env.prod === true);
-var sassStyle = 'compressed';
-var sourceMap = ! (gutil.env.prod === true);
-
+var inDevelopment = ! (gutil.env.prod === true); // note the !
+var inProduction = (gutil.env.prod === true);
+var sourceMap = ! (gutil.env.prod === true); // note the !
 var verboseMode = (gutil.env.verbose === true);
 
 var resourcesBasePath = 'resources/';
-var sassPath = resourcesBasePath + 'sass/';
-var publicBasePath = 'public/';
-var cssPath = publicBasePath + 'css/';
+var outputBasePath = 'public/';
 
 module.exports = {
-    isDevelopment: isDevelopment,
+    inDevelopment: inDevelopment,
+    inProduction: inProduction,
     siteUrl: 'http://gulp.talk',
     paths: {
         assets: {
-            sass: sassPath
+            sass: resourcesBasePath + 'sass/'
         },
         output: {
-            css: cssPath
+            css: outputBasePath + 'css/'
         }
     },
     sassConfig: {
         sourcemap: sourceMap,
         bundleExec: true,
-        loadPath: sassPath,
-        style: sassStyle,
+        loadPath: resourcesBasePath + 'sass/',
+        style: 'compressed',
         verbose: verboseMode
     }
 };

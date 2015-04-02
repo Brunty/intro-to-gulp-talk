@@ -1,11 +1,14 @@
-<?php namespace Brunty\GulpTalk;
+<?php
+namespace Brunty\GulpTalk;
+
 /**
  * Class Archer
  * @package Brunty\GulpTalk
  */
-class Archer {
+class Archer
+{
 
-    public function laaaanaaaaa()
+    public function lana()
     {
         // TODO: call Kenny Loggins
     }
