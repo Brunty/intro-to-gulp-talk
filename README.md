@@ -12,3 +12,6 @@ Some brief initial code from the talk given (initially) at PHP East Midlands.
 * http://blog.keithcirkel.co.uk/why-we-should-stop-using-grunt/
 * http://xkcd.com/378/
 * http://gitlab.mfyu.co.uk/matt/front-end-structure
+
+### Slides
+* http://www.slideshare.net/Brunty/intro-togulp
