@@ -11,12 +11,13 @@ var verboseMode = (gutil.env.verbose === true);
 
 var resourcesBasePath = 'resources/';
 var outputBasePath = 'public/';
-
+var bowerBasePath = 'bower_components/';
 module.exports = {
     inDevelopment: inDevelopment,
     inProduction: inProduction,
     siteUrl: 'http://gulp.talk',
     paths: {
+        bower: bowerBasePath,
         assets: {
             sass: resourcesBasePath + 'sass/'
         },
@@ -27,8 +28,13 @@ module.exports = {
     sassConfig: {
         sourcemap: sourceMap,
         bundleExec: true,
-        loadPath: resourcesBasePath + 'sass/',
+        loadPath: [
+            resourcesBasePath + 'sass/'
+        ],
         style: 'compressed',
         verbose: verboseMode
+    },
+    autoPrefixer: {
+        browsers: ["last 5 versions", "> 1%", "ie 9", "safari > 6"]
     }
 };

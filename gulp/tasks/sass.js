@@ -17,7 +17,7 @@ gulp.task('sass', function () {
         .on('error', function (err) {
             console.error('Error', err.message);
         })
-        .pipe(prefix({ browsers: ["last 5 versions", "> 1%", "ie 9", "safari > 6"] })) // prefix for browsers
+        .pipe(prefix(config.autoPrefixer)) // prefix for browsers
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('./', { includeContent: true }))
         .pipe(gulp.dest(config.paths.output.css))

@@ -1,6 +1,6 @@
 {
   "name": "gulp-talk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package file for a gulp-talk.",
   "main": "public/index.php",
   "repository": "https://github.com/Brunty/intro-to-gulp-talk",

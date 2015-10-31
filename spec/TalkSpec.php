@@ -18,7 +18,7 @@ class TalkSpec extends ObjectBehavior
         $this->shouldHaveType('Brunty\GulpTalk\Talk');
     }
 
-    public function it_get_us_a_totally_legit_random_number()
+    function it_get_us_a_totally_legit_random_number()
     {
         $this->getRandomNumber()->shouldReturn(4);
     }
