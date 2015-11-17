@@ -6,7 +6,7 @@ var gutil = require('gulp-util');
  */
 var inProduction = (gutil.env.prod === true);
 var inDevelopment = !inProduction;
-var hasSourcemap = inDevelopment;
+var hasSourcemap = inDevelopment && (gutil.env.maps === true);
 var isVerbose = (gutil.env.verbose === true);
 
 var resourcesBasePath = 'resources/';
@@ -32,8 +32,5 @@ module.exports = {
         ],
         style: 'compressed',
         verbose: isVerbose
-    },
-    autoPrefixer: {
-        browsers: ["last 5 versions", "> 1%", "ie 9", "safari > 6"]
     }
 };
